@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "TWMessageBarManager"
-  s.version      = "1.5.2"
+  s.version      = "1.5.3"
   s.summary      = "An iOS manager for presenting system-wide notifications via a dropdown message bar."
   s.homepage     = "https://github.com/terryworona/TWMessageBarManager"
 
