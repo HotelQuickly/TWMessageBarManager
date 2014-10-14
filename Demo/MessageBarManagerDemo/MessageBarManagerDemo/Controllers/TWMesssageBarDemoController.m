@@ -135,7 +135,8 @@ static UIColor *kTWMesssageBarDemoControllerButtonColor = nil;
                                                    description:kStringMessageBarErrorMessage
                                                           type:TWMessageBarMessageTypeError
                                                 statusBarStyle:UIStatusBarStyleBlackOpaque
-                                                      callback:nil];
+                                                      callback:nil
+                                                    hidingIcon:NO];
 }
 
 - (void)successButtonPressed:(id)sender
@@ -144,7 +145,8 @@ static UIColor *kTWMesssageBarDemoControllerButtonColor = nil;
                                                    description:kStringMessageBarSuccessMessage
                                                           type:TWMessageBarMessageTypeSuccess
                                                 statusBarStyle:UIStatusBarStyleBlackOpaque
-                                                      callback:nil];
+                                                      callback:nil
+                                                    hidingIcon:NO];
 }
 
 - (void)infoButtonPressed:(id)sender

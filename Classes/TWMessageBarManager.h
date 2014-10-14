@@ -81,6 +81,14 @@ typedef enum {
 @property (nonatomic, assign) UIStatusBarStyle preferredStatusBarStyle;
 
 /**
+ *  Shows a message with the supplied message centered and type (dictates color, stroke) without icon.
+ *
+ *  @param message  Description text in the message view.
+ *  @param type         Type dictates color, stroke and icon shown in the message view.
+ */
+- (void)showMessage:(NSString *)description type:(TWMessageBarMessageType)type;
+
+/**
  *  Shows a message with the supplied title, description and type (dictates color, stroke and icon).
  *
  *  @param title        Header text in the message view.
@@ -90,14 +98,25 @@ typedef enum {
 - (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type;
 
 /**
+ *  Shows a message with the supplied title, description and type (dictates color, stroke and icon).
+ *
+ *  @param title        Header text in the message view.
+ *  @param description  Description text in the message view.
+ *  @param type         Type dictates color, stroke and icon shown in the message view.
+ *  @param hidingIcon   Hides the icon or not
+ */
+- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type hidingIcon:(BOOL)hidingIcon;
+
+/**
  *  Shows a message with the supplied title, description, type (dictates color, stroke and icon) & callback block.
  *
  *  @param title        Header text in the message view.
  *  @param description  Description text in the message view.
  *  @param type         Type dictates color, stroke and icon shown in the message view.
  *  @param callback     Callback block to be executed if a message is tapped.
+ *  @param hidingIcon   Hides the icon or not
  */
-- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type callback:(void (^)())callback;
+- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type callback:(void (^)())callback hidingIcon:(BOOL)hidingIcon;
 
 /**
  *  Shows a message with the supplied title, description, type (dictates color, stroke and icon) & duration.
@@ -106,8 +125,9 @@ typedef enum {
  *  @param description  Description text in the message view.
  *  @param type         Type dictates color, stroke and icon shown in the message view.
  *  @param duration     Default duration is 3 seconds, this can be overridden by supplying an optional duration parameter.
+ *  @param hidingIcon   Hides the icon or not
  */
-- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type duration:(CGFloat)duration;
+- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type duration:(CGFloat)duration hidingIcon:(BOOL)hidingIcon;
 
 /**
  *  Shows a message with the supplied title, description, type (dictates color, stroke and icon), callback block & duration.
@@ -117,8 +137,9 @@ typedef enum {
  *  @param type         Type dictates color, stroke and icon shown in the message view.
  *  @param duration     Default duration is 3 seconds, this can be overridden by supplying an optional duration parameter.
  *  @param callback     Callback block to be executed if a message is tapped.
+ *  @param hidingIcon   Hides the icon or not
  */
-- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type duration:(CGFloat)duration callback:(void (^)())callback;
+- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type duration:(CGFloat)duration callback:(void (^)())callback hidingIcon:(BOOL)hidingIcon;
 
 /**
  *  Shows a message with the supplied title, description, type (dictates color, stroke and icon), callback block & duration.
@@ -128,8 +149,9 @@ typedef enum {
  *  @param type             Type dictates color, stroke and icon shown in the message view.
  *  @param statusBarStyle   Applied during the presentation of the message. After dismissal, the style will revert to preferredStatusBarStyle.
  *  @param callback         Callback block to be executed if a message is tapped.
+ *  @param hidingIcon   Hides the icon or not
  */
-- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type statusBarStyle:(UIStatusBarStyle)statusBarStyle callback:(void (^)())callback;
+- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type statusBarStyle:(UIStatusBarStyle)statusBarStyle callback:(void (^)())callback hidingIcon:(BOOL)hidingIcon;
 
 /**
  *  Shows a message with the supplied title, description, type (dictates color, stroke and icon), callback block & duration.
@@ -140,8 +162,9 @@ typedef enum {
  *  @param duration         Default duration is 3 seconds, this can be overridden by supplying an optional duration parameter.
  *  @param statusBarStyle   Applied during the presentation of the message. After dismissal, the style will revert to preferredStatusBarStyle.
  *  @param callback         Callback block to be executed if a message is tapped.
+ *  @param hidingIcon   Hides the icon or not
  */
-- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type duration:(CGFloat)duration statusBarStyle:(UIStatusBarStyle)statusBarStyle callback:(void (^)())callback;
+- (void)showMessageWithTitle:(NSString *)title description:(NSString *)description type:(TWMessageBarMessageType)type duration:(CGFloat)duration statusBarStyle:(UIStatusBarStyle)statusBarStyle callback:(void (^)())callback hidingIcon:(BOOL)hidingIcon;
 
 /**
  *  Hides the topmost message and removes all remaining messages in the queue.
