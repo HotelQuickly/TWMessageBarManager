@@ -591,7 +591,12 @@ static UIColor *kTWDefaultMessageBarStyleSheetInfoStrokeColor = nil;
     CGSize descriptionLabelSize = [self descriptionSize];
     
     if( self.descriptionString == nil && self.hasIcon == NO ){
-        return 64; // Nav + Status bar
+        return MAX(64, // Nav + Status bar
+                   
+                   titleLabelSize.height
+                   + [self statusBarOffset]
+                   + (kTWMessageViewBarPadding * 2)
+                   );
     }
     
     return MAX(
